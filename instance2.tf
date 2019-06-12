@@ -47,9 +47,8 @@ rm -rf myjdbc
 git clone  https://github.com/Tamilvananb/myjdbc.git
 cd myjdbc/
 sudo mvn clean install
-sudo mv myjdbc/target/*.war /var/lib/tomcat/webapps/myjdbc.war" >> script.sh
+sudo mv target/*.war /var/lib/tomcat/webapps/myjdbc.war" >> script.sh
 chmod 777 script.sh
-
 
 
 
