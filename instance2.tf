@@ -41,9 +41,13 @@ sudo rm -rf /usr/share/tomcat/conf/tomcat-users.xml
 
 
 cd /home/ec2-user/
-echo "git clone  https://github.com/Tamilvananb/myjdbc.git
-rm -rf /var/lib/tomcat/webapps/myjdbc.war
-sudo mv /home/ec2-user/myjdbc/target/*.war /var/lib/tomcat/webapps/myjdbc.war" >> script.sh
+
+echo "
+rm -rf myjdbc
+git clone  https://github.com/Tamilvananb/myjdbc.git
+cd myjdbc/
+sudo mvn clean install
+sudo mv myjdbc/target/*.war /var/lib/tomcat/webapps/myjdbc.war" >> script.sh
 chmod 777 script.sh
 
 
