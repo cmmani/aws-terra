@@ -28,18 +28,23 @@ yum install git -y
 cd /home/
   sudo yum install maven -y
       git clone  https://github.com/Tamilvananb/nginx.conf.git
-      git clone  https://github.com/Tamilvananb/myjdbc.git
+  #    git clone  https://github.com/Tamilvananb/myjdbc.git
       sudo yum install tomcat tomcat-webapps tomcat-admin-webapps -y    
 cd /home/myjdbc/
 sudo mvn clean install
 
 sudo rm -rf /usr/share/tomcat/conf/tomcat-users.xml
               sudo mv /home/nginx.conf/tomcat-users.xml /usr/share/tomcat/conf/tomcat-users.xml
-              sudo mv /home/myjdbc/target/*.war /var/lib/tomcat/webapps/myjdbc.war
+   #           sudo mv /home/myjdbc/target/*.war /var/lib/tomcat/webapps/myjdbc.war
 
 
 
 
+cd /home/ec2-user/
+echo "git clone  https://github.com/Tamilvananb/myjdbc.git
+rm -rf /var/lib/tomcat/webapps/myjdbc.war
+sudo mv /home/ec2-user/myjdbc/target/*.war /var/lib/tomcat/webapps/myjdbc.war" >> script.sh
+chmod 777 script.sh
 
 
 
